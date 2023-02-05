@@ -8,6 +8,7 @@ jobs:
     permissions:
       id-token: write # need this for OIDC
       contents: read
+      
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
