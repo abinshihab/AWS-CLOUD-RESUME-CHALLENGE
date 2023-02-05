@@ -28,6 +28,29 @@
               document.getElementById('counter').innerHTML = data
         console.log(data)});
       </script>
+      <script>
+        fetch('https://s3.amazonaws.com/awsbenshehab.com/CV/Ahmed+Bin+Shehab+updated+2023.pdf', {method: 'GET'})
+  .then(res => {
+    return res.blob();
+  })
+  .then(blob => {
+    var url = window.URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'myItem.extension';
+    document.body.appendChild(a); 
+    a.click();  
+    setTimeout(
+      _ => { window.URL.revokeObjectURL(url); }, 
+      60000); 
+    a.remove(); 
+  })
+  .catch(err => {
+    console.error('err: ', err);
+  })
+
+
+      </script>
   </head>
   <body id="top">
     <header>
@@ -60,7 +83,7 @@
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="images/personal photo.jpg" alt="Image"/></a></div>
           <div class="h2 title">Ahmed Hussein Bin Shehab</div>
-          <p class="category text-white">Cloud Architect , Sr. IT Support Engineer and Software Tester</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white">Cloud Architect , Sr. IT Support Engineer and Software Tester</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="https://s3.amazonaws.com/awsbenshehab.com/CV/Ahmed+Bin+Shehab+updated+2023.pdf" download='ITEM-NAME.extension' data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
           <p style="color:white">Welcome to my website , and this page has been viewed <a id="counter"> </a> times :) </p>      
         </div>
       </div>
