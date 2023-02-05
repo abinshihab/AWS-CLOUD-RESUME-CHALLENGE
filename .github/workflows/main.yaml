@@ -36,7 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: make integration-test
+      - run: |
+            make integration-test
 
   end-to-end-test:
     needs: integration-test-backend
