@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd cloud-resume-challenge && make integration-test-backend && cd ../../ 
+      - run: make integration-test
 
   end-to-end-test:
     needs: integration-test-backend
